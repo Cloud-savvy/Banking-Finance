@@ -62,11 +62,4 @@ pipeline {
             }
         }
     }
-
-    post {
-        always {
-            cleanWs()
-            sh 'docker image prune -f'
-        }
-    }
 }
