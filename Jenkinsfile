@@ -56,6 +56,11 @@ pipeline {
                 sh "docker push ${DOCKER_USER}/banking:latest"
             }
         }
+        stage('Deploy Container') {
+            steps {
+                sh 'docker run -itd --name banking-container -p 8083:80 ${IMAGE}'
+            }
+        }
     }
 
     post {
