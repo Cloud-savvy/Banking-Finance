@@ -49,7 +49,7 @@ pipeline {
             steps {
                 sh '''
                     docker rm -f banking-container || true
-                    docker run -itd --name banking-container -p 8083:8080 $IMAGE
+                    docker run -itd --name banking-container -p 8083:8081 $IMAGE
                 '''
             }
         }
